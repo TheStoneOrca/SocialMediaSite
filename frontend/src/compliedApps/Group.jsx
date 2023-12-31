@@ -35,7 +35,7 @@ function Group() {
     const foundUser = await getUser();
     if (foundUser !== undefined && foundUser !== "User not found!") {
       const joinedUser = await axios.get(
-        `https://localhost:4000/api/group/${id}/member/${foundUser.userid}`
+        `http://localhost:4000/api/group/${id}/member/${foundUser.userid}`
       );
       if (typeof joinedUser.data === "object") {
         setAlreadyJoined(true);
